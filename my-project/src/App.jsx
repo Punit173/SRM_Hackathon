@@ -4,6 +4,8 @@ import Events from "./components/Events";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import React from 'react'
+import Ourteam from "./components/Ourteam";
+import Footer from "./components/Footer";
 
 
 export default function App() {
@@ -13,6 +15,8 @@ export default function App() {
       <Hero/>
       <AboutUs/>
       <Events/>
+      <Ourteam/>
+      <Footer/>
     </>
   )
 }
