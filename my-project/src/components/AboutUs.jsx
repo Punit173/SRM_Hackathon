@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../App.css';
 import teamphoto from '../assets/Image+Backdrop.png';
 
 const AboutUs = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className='flex flex-wrap text-white p-5'>
+    <div className={`flex flex-wrap text-white p-5 rounded-lg transition-all duration-300 ${
+      isScrolled ? 'shadow-lg shadow-blue-500/50 border border-blue-500 shimmer' : ''
+    }`}>
       <div className='w-full md:w-1/2 p-9'>
         <h1 className='text-4xl bg mb-4 text-center jetmono md:text-left'>About Us</h1>
         <p className='text-xl jetmono md:text-left'>
