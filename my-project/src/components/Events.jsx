@@ -44,7 +44,7 @@ const Events = () => {
                         className="flex items-center justify-center"
                         style={{ backgroundImage: 'url("../assets/Artboard1a3 1.png")' }}
                     >
-                        <button className="border-4 jetmono border-blue-500 rounded-full px-6 py-2 bg-black bg-opacity-70 hover:bg-blue-900 transition-colors">
+                        <button className="border-4 hidden md:flex jetmono border-blue-500 rounded-full px-6 py-2 bg-black bg-opacity-70 hover:bg-blue-900 transition-colors">
                             More
                         </button>
                     </div>
