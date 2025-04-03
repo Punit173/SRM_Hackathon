@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
+import AboutUs from './AboutUs';
+import { Link } from "react-scroll";
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,18 +19,30 @@ const Navbar = () => {
           </button>
         </div>
         <ul className='hidden md:flex space-x-10 tracking-widest font-bold text-xl'>
-          <a href='' className='hover:text-blue-500'><li>About <span className='text-blue-500'>Us</span></li></a>
-          <a href='' className='hover:text-blue-500'><li>Events</li></a>
-          <a href='' className='hover:text-blue-500'><li>Team</li></a>
+        <Link to="about" smooth={true} duration={500} className="cursor-pointer hover:text-gray-400">
+        About <span className='text-blue-500'>Us</span> 
+      </Link>
+      <Link to="events" smooth={true} duration={500} className="cursor-pointer hover:text-blue-500">
+      Events
+      </Link>
+      <Link to="ourteam" smooth={true} duration={500} className="cursor-pointer hover:text-blue-500">
+      Team
+      </Link>
           <a href='' className='hover:text-blue-500'><li>Contact <span className='text-blue-500'>Us</span></li></a>
           <a href='' className='hover:text-blue-500'><li>Register</li></a>
         </ul>
       </div>
       {isOpen && (
         <ul className='md:hidden flex flex-col items-center space-y-4 mt-4 text-lg'>
-          <a href=''><li>About <span className='text-blue-500'>Us</span></li></a>
-          <a href=''><li>Events</li></a>
-          <a href=''><li>Team</li></a>
+          <Link to="about" smooth={true} duration={500} className="cursor-pointer hover:text-gray-400">
+        About <span className='text-blue-500'>Us</span> 
+      </Link>
+      <Link to="events" smooth={true} duration={500} className="cursor-pointer hover:text-blue-500">
+      Events
+      </Link>
+      <Link to="ourteam" smooth={true} duration={500} className="cursor-pointer hover:text-blue-500">
+      Team
+      </Link>
           <a href=''><li>Contact <span className='text-blue-500'>Us</span></li></a>
           <a href=''><li>Register</li></a>
         </ul>
