@@ -11,6 +11,7 @@ import { Element } from "react-scroll";
 
 
 
+
 export default function App() {
   return (
     <div>
@@ -19,6 +20,7 @@ export default function App() {
       <Element name="about"><AboutUs /></Element>
       <Element name="events"><Events/></Element>
        <Element name="ourteam"><Ourteam/></Element> 
+       <Element name="domain"><Domains/></Element> 
       <Footer/>
   </div>
   )

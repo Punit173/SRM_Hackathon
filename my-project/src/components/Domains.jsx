@@ -3,76 +3,36 @@ import React from 'react'
 const Domains = () => {
     return (
         <div className="relative w-full h-screen bg-black flex items-center justify-center">
-            <div className="absolute text-red-700 font-bold text-9xl tracking-widest z-0"
+            <div className="absolute text-red-700 font-bold text-6xl md:text-9xl tracking-widest z-0"
                  style={{
                      textShadow: '0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000',
                  }}>
                 DOMAINS
             </div>
 
-            <div className="z-10 flex flex-col items-center">
-                <svg className="absolute top-0 left-0 w-full h-full" style={{ pointerEvents: 'none', zIndex: 5 }}>
-                    <line x1="50%" y1="30%" x2="43%" y2="42%" stroke="#718096" strokeWidth="1" />
-                    <line x1="50%" y1="30%" x2="57%" y2="42%" stroke="#718096" strokeWidth="1" />
-                    
-                    <line x1="43%" y1="42%" x2="35%" y2="54%" stroke="#718096" strokeWidth="1" />
-                    <line x1="43%" y1="42%" x2="50%" y2="54%" stroke="#718096" strokeWidth="1" />
-                    <line x1="57%" y1="42%" x2="50%" y2="54%" stroke="#718096" strokeWidth="1" />
-                    <line x1="57%" y1="42%" x2="65%" y2="54%" stroke="#718096" strokeWidth="1" />
-                    
-                    <line x1="35%" y1="54%" x2="27%" y2="66%" stroke="#718096" strokeWidth="1" />
-                    <line x1="35%" y1="54%" x2="39%" y2="66%" stroke="#718096" strokeWidth="1" />
-                    <line x1="50%" y1="54%" x2="39%" y2="66%" stroke="#718096" strokeWidth="1" />
-                    <line x1="50%" y1="54%" x2="61%" y2="66%" stroke="#718096" strokeWidth="1" />
-                    <line x1="65%" y1="54%" x2="61%" y2="66%" stroke="#718096" strokeWidth="1" />
-                    <line x1="65%" y1="54%" x2="73%" y2="66%" stroke="#718096" strokeWidth="1" />
-                    
-                    <line x1="43%" y1="42%" x2="57%" y2="42%" stroke="#718096" strokeWidth="1" />
-                    <line x1="35%" y1="54%" x2="50%" y2="54%" stroke="#718096" strokeWidth="1" />
-                    <line x1="50%" y1="54%" x2="65%" y2="54%" stroke="#718096" strokeWidth="1" />
-                    <line x1="27%" y1="66%" x2="39%" y2="66%" stroke="#718096" strokeWidth="1" />
-                    <line x1="39%" y1="66%" x2="61%" y2="66%" stroke="#718096" strokeWidth="1" />
-                    <line x1="61%" y1="66%" x2="73%" y2="66%" stroke="#718096" strokeWidth="1" />
-                </svg>
-
-                <div className="mb-16">
+            <div className="z-10 flex flex-col items-center w-full max-w-6xl px-4 space-y-8 md:space-y-12">
+                {/* Vertical line connecting all sections */}
+               
+                <div className="relative z-10">
                     <Node label="Creatives" />
                 </div>
 
-                <div className="flex justify-center mb-16">
-                    <div className="mx-12">
-                        <Node label="Logistics" />
-                    </div>
-                    <div className="mx-12">
-                        <Node label="Publicity" />
-                    </div>
+                <div className="flex justify-center gap-8 md:gap-16 relative z-10">
+                    <Node label="Logistics" />
+                    <Node label="Publicity" />
                 </div>
 
-                <div className="flex justify-center mb-16">
-                    <div className="mx-8">
-                        <Node label="Technical Events" />
-                    </div>
-                    <div className="mx-8">
-                        <Node label="Technical" />
-                    </div>
-                    <div className="mx-8">
-                        <Node label="Outreach" />
-                    </div>
+                <div className="flex justify-center gap-6 md:gap-12 relative z-10">
+                    <Node label="Technical Events" />
+                    <Node label="Technical" />
+                    <Node label="Outreach" />
                 </div>
 
-                <div className="flex justify-center">
-                    <div className="mx-4">
-                        <Node label="Creatives" />
-                    </div>
-                    <div className="mx-4">
-                        <Node label="Creatives" />
-                    </div>
-                    <div className="mx-4">
-                        <Node label="Creatives" />
-                    </div>
-                    <div className="mx-4">
-                        <Node label="Creatives" />
-                    </div>
+                <div className="flex flex-wrap justify-center gap-4 md:gap-8 relative z-10">
+                    <Node label="Creatives" />
+                    <Node label="Creatives" />
+                    <Node label="Creatives" />
+                    <Node label="Creatives" />
                 </div>
             </div>
         </div>
