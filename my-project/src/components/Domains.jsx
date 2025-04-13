@@ -1,69 +1,67 @@
 import React from 'react'
+import { motion } from 'framer-motion'
+import styles from './Domains.module.css'
+
+const domainData = [
+    { id: 1, label: "Technical", icon: "" },
+    { id: 2, label: "Design", icon: "" },
+    { id: 3, label: "Management", icon: "" },
+    { id: 4, label: "Content", icon: "" },
+    { id: 5, label: "Marketing", icon: "" },
+    { id: 6, label: "Operations", icon: "" }
+];
 
 const Domains = () => {
     return (
-        <div className="relative w-full h-screen bg-black flex items-center justify-center">
-            <div className="absolute text-red-700 font-bold text-6xl md:text-9xl tracking-widest z-0"
-                 style={{
-                     textShadow: '0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000',
-                 }}>
+        <div className="relative min-h-screen bg-black py-12 px-4 pb-24">
+            <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="absolute inset-0 z-0"
+                style={{
+                    background: 'radial-gradient(circle at center, rgba(0,0,255,0.1) 0%, transparent 70%)',
+                }}
+            />
+
+            <motion.h1 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="text-center text-6xl md:text-8xl font-bold mb-20 text-blue-500"
+                style={{ textShadow: '0 0 10px #0000ff, 0 0 20px #0000ff' }}
+            >
                 DOMAINS
-            </div>
+            </motion.h1>
 
-            <div className="z-10 flex flex-col items-center w-full max-w-6xl px-4 space-y-8 md:space-y-12">
-                {/* Vertical line connecting all sections */}
-               
-                <div className="relative z-10">
-                    <Node label="Creatives" />
-                </div>
-
-                <div className="flex justify-center gap-8 md:gap-16 relative z-10">
-                    <Node label="Logistics" />
-                    <Node label="Publicity" />
-                </div>
-
-                <div className="flex justify-center gap-6 md:gap-12 relative z-10">
-                    <Node label="Technical Events" />
-                    <Node label="Technical" />
-                    <Node label="Outreach" />
-                </div>
-
-                <div className="flex flex-wrap justify-center gap-4 md:gap-8 relative z-10">
-                    <Node label="Creatives" />
-                    <Node label="Creatives" />
-                    <Node label="Creatives" />
-                    <Node label="Creatives" />
+            <div className="relative max-w-6xl mx-auto mb-16">
+                {/* Domain Cards in Hexagonal Layout */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 relative z-10">
+                    {domainData.map((domain, index) => (
+                        <motion.div
+                            key={domain.id}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: index * 0.2 }}
+                            className={`relative group ${styles.domainCard}`}
+                        >
+                            <div className="
+                                p-6 rounded-lg
+                                bg-black
+                                border-2 border-blue-500
+                                transform transition-all duration-300
+                                hover:scale-105 hover:shadow-[0_0_15px_rgba(0,0,255,0.5)]
+                                group-hover:border-blue-400
+                                text-center
+                            ">
+                                <div className="text-4xl mb-4">{domain.icon}</div>
+                                <h3 className="text-xl font-bold text-blue-400 mb-2">{domain.label}</h3>
+                                <div className="absolute -z-10 inset-0 opacity-0 group-hover:opacity-20 transition-opacity bg-blue-500 blur-xl"></div>
+                            </div>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
         </div>
     )
 }
-
-const Node = ({ label }) => {
-    return (
-        <div className="flex flex-col items-center justify-center w-24 h-24 rounded-lg border-2 border-blue-500 bg-blue-900 bg-opacity-30 text-blue-400 p-2 hover:bg-blue-800 hover:bg-opacity-50 transition-all duration-300">
-            <div className="flex items-center justify-center w-full h-full">
-                <svg viewBox="0 0 24 24" className="w-8 h-8 mb-2">
-                    <path
-                        fill="currentColor"
-                        d="M20.71,4.04C21.1,3.65 21.1,3 20.71,2.63L18.37,0.29C18,-0.1 17.35,-0.1 16.96,0.29L15,2.25L18.75,6L20.71,4.04Z"
-                    />
-                    <path
-                        fill="currentColor"
-                        d="M17.75,7L14,3.25L4,13.25V17H7.75L17.75,7Z"
-                    />
-                    <path
-                        fill="currentColor"
-                        d="M2,11.3V21H11.7L21.7,11L13,2.3L2,11.3Z"
-                        fillOpacity="0.2"
-                    />
-                </svg>
-            </div>
-            <div className="text-center text-xs font-medium">
-                {label}
-            </div>
-        </div>
-    );
-};
 
 export default Domains

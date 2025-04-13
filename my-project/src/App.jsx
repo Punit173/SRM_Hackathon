@@ -14,7 +14,7 @@ import { Element } from "react-scroll";
 
 export default function App() {
   return (
-    <div>
+    <div style={{ width: '100%', overflow: 'hidden', position: 'relative' }}>
       <Navbar />
       <Hero/>
       <Element name="about"><AboutUs /></Element>
